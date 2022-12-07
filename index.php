@@ -18,7 +18,7 @@ $contact = CRest::call('crm.contact.list',
                 [
                   'filter' => ['PHONE' => '555888']
                 ]);
-outputResult($contact['result']);
+outputResult($contact['result'][0]);
 
 echo '<b>Задача 3 : Получить число лидов, у которых ответственный = Администратор Мозготека</b>';
 
