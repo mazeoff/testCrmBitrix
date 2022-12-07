@@ -22,9 +22,7 @@ outputResult($contact['result']);
 
 echo '<b>Задача 3 : Получить число лидов, у которых ответственный = Администратор Мозготека</b>';
 
-$lead = CRest::call('crm.lead.fields');
-
-$user = CRest::call('batch',[
+$leads = CRest::call('batch',[
   'halt' => 0,
   'cmd' =>[
      'user_by_name'=> 'user.search?NAME=Администратор Мозготека',
@@ -32,6 +30,6 @@ $user = CRest::call('batch',[
   ]
 ]);
 
-outputResult('Число лидов: '.$user['result']['result_total']['user_lead']);
+outputResult('Число лидов: '.$leads['result']['result_total']['user_lead']);
 
 ?>
